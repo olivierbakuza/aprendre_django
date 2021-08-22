@@ -1,0 +1,39 @@
+{% load static%}
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>library</title>
+    <link rel="stylesheet" href="{% static 'library/styles/base.css'%}">
+</head>
+<body>
+    <h1> all books</h1>
+    <p>welcome to all in library</p>
+
+    <table>
+        <ul>
+            <li>Titre</li>
+            <li>Auteur</li>
+            <li>edition</li>
+            <li>ISBN</li>
+           
+        </ul>
+        {% for i in books  %}
+    
+        <tr>
+            <td>{{i.title}}<td>
+            <td>{{i.Auteur}}<td>
+            <td>{{i.Edution}}<td>
+            <td>{{i.ISBN}}<td>
+            
+        </tr>
+        {%empty%}
+            <p>Aucun livre dispo</p>
+        {% endfor %}
+    </table>
+  
+    
+</body>
+</html>
